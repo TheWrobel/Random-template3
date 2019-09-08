@@ -1,0 +1,13 @@
+@mixin trapezoid($height, $bgcolor, $opacity) {
+    width: $height/2;
+    height: $height/2;
+    background: rgba($bgcolor, $opacity);     
+    position: relative;
+    &::after{
+        position: absolute;
+        top: $height/2;
+        border-top: $height/2 solid rgba($bgcolor, $opacity);
+        border-right: $height/2 solid transparent;
+        content: '';
+    }
+}
